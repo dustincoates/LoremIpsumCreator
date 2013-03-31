@@ -1,9 +1,11 @@
 lorem(count, text) ->
-  theWell = text.split(" ")
+  tempWell = text.split(" ")
+  theWell = []
   output = []
   wordCounter = 0
-  if isNaN(count)
-    count = parseInt(count, 10)
-    if isNaN(count)
-      return "You must specify a number"
+  count = parseInt(count, 10) if isNAN(count)
 
+  return "You must specify a number" if isNaN(count)
+
+  for word in tempWell
+    theWell.push(word) unless word in theWell

@@ -5,9 +5,9 @@ function lorem(count, text){
     if (isNaN(count)){
         count = parseInt(count, 10);
         if (isNaN(count)){
-        return type + " must be a number.";}
+        return "You must specify a number.";}
     }
-    
+
     function areWordsTheSame(){
         for (i=0;i<theWell.length;i++){
             if (theWell[i] === theWell[i-1]){
@@ -15,11 +15,11 @@ function lorem(count, text){
             }
         }
     }
-    
+
     if (theWell.length < 3 || areWordsTheSame()){
         return "You must have at least three unique words separated by spaces.";
     }
-    
+
     // check if the word counter is less than the number of words the user wanted
     // if so, keep going; if not, return
     // this'll be using a recursive function
@@ -63,7 +63,6 @@ function lorem(count, text){
             return loremCreator(wordCounter+1,count,periodCounter+1,wordWithPeriod,sentenceCounter,sentenceWithNewLine);
        }
        return loremCreator(wordCounter, count);
-       
 }
 
 console.log(lorem(500, "random word lorem ipsum generator now"));

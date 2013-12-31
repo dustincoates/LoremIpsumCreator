@@ -1,5 +1,5 @@
 function lorem(count, text){
-    var theWell = text.split(" ");
+    var theWell = text.split(/,\s*|\s/);
     var output = [];
     var wordCounter = 0;
     if (isNaN(count)){

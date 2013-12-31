@@ -8,7 +8,7 @@ function lorem(count, text){
         return "You must specify a number.";}
     }
 
-    function areWordsTheSame(){
+    function enoughUniqueWords(){
         var cache = {};
         for (i=0;i<theWell.length;i++){
             if (!(theWell[i] in cache)) {
@@ -18,7 +18,7 @@ function lorem(count, text){
         return Object.keys(cache).length < 3;
     }
 
-    if (areWordsTheSame()){
+    if (enoughUniqueWords()){
         return "You must have at least three unique words separated by spaces.";
     }
 

@@ -15,7 +15,8 @@ function lorem(count, text){
                 cache[theWell[i]] = theWell[i];
             };
         }
-        return Object.keys(cache).length < 3;
+        theWell = Object.keys(cache)
+        return theWell.length < 3;
     }
 
     if (enoughUniqueWords()){
@@ -25,7 +26,7 @@ function lorem(count, text){
     // check if the word counter is less than the number of words the user wanted
     // if so, keep going; if not, return
     // this'll be using a recursive function
-   function loremCreator(wordCounter, count, periodCounter, wordWithPeriod,sentenceCounter,sentenceWithNewLine){
+   function loremCreator(wordCounter, count, periodCounter, wordWithPeriod, sentenceCounter, sentenceWithNewLine){
         // if we've reached the number the user wants, let's return it
         if(wordCounter === count){
             return output.join(" ")+".";
@@ -44,7 +45,8 @@ function lorem(count, text){
         var randomWord = theWell[randomNumber];
             // if word matches either of the previous two words, try again
             if (randomWord === output[output.length-1] || randomWord === output[output.length-2]){
-                return loremCreator(wordCounter,count,periodCounter,wordWithPeriod,sentenceCounter,sentenceWithNewLine);
+                return loremCreator(wordCounter, count, periodCounter,
+                    wordWithPeriod, sentenceCounter, sentenceWithNewLine);
             }
             // if first word of sentence, capitalize, if first word of paragraph, add new line
             if (count - wordCounter > 3){

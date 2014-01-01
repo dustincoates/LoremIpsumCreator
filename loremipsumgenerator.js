@@ -1,5 +1,5 @@
 function lorem(count, text){
-    var theWell = text.split(/,\s*|\s/);
+    var theWell = removeDuplicateWords(text.split(/,\s*|\s/));
     var output = [];
     var wordCounter = 0;
     if (isNaN(count)){
@@ -8,18 +8,23 @@ function lorem(count, text){
         return "You must specify a number.";}
     }
 
-    function enoughUniqueWords(){
+    function removeDuplicateWords(text){
         var cache = {};
-        for (i=0;i<theWell.length;i++){
-            if (!(theWell[i] in cache)) {
-                cache[theWell[i]] = theWell[i];
+        for (i=0;i<text.length;i++){
+            if (!(text[i] in cache)) {
+                cache[text[i]] = text[i];
             };
         }
-        theWell = Object.keys(cache)
-        return theWell.length < 3;
+        return Object.keys(cache);
     }
 
-    if (enoughUniqueWords()){
+    function enoughUniqueWords(text) {
+        console.log(text);
+        console.log(text.length);
+        return text.length < 3;
+    }
+
+    if (enoughUniqueWords(theWell)){
         return "You must have at least three unique words separated by spaces.";
     }
 

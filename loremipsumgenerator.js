@@ -3,17 +3,17 @@ function lorem(count, text){
   var output = [];
   var wordCounter = 0;
   if (isNaN(count)){
-      count = parseInt(count, 10);
-      if (isNaN(count)){
-      return "You must specify a number.";}
+    count = parseInt(count, 10);
+    if (isNaN(count)){
+    return "You must specify a number.";}
   }
 
   function removeDuplicateWords(text){
     var cache = {};
-    for (i=0;i<text.length;i++){
-        if (!(text[i] in cache)) {
-            cache[text[i]] = text[i];
-        };
+    for (var i=0;i<text.length;i++){
+      if (!(text[i] in cache)) {
+        cache[text[i]] = text[i];
+      }
     }
     return Object.keys(cache);
   }
@@ -56,7 +56,7 @@ function lorem(count, text){
       if (periodCounter === 0){
         randomWord = randomWord.charAt(0).toUpperCase() + randomWord.slice(1);
         if (sentenceCounter === sentenceWithNewLine){
-            randomWord = "\n\n" + randomWord;
+          randomWord = "\n\n" + randomWord;
         }
       }
       // if we're at the word that needs a period, append it to the end

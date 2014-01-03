@@ -32,4 +32,6 @@ Lorem.prototype.enoughUniqueWords = function(numOfWords) {
   return this.words.length >= numOfWords;
 };
 
+Lorem.sentencize = function(words) {
+  return words.join(" ")+".";
 };

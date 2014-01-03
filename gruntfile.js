@@ -8,6 +8,8 @@ module.exports = function (grunt) {
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
 
+    grunt.loadNpmTasks('grunt-contrib-coffee');
+
     // Define the configuration for all the tasks
     grunt.initConfig({
 
@@ -99,6 +101,14 @@ module.exports = function (grunt) {
                     urls: ['http://<%= connect.test.options.hostname %>:<%= connect.test.options.port %>/index.html']
                 }
             }
+        },
+
+        coffee: {
+            compile: {
+                files: {
+                  'coffee/loremipsumgenerator.js': 'loremipsumgenerator.coffee'
+                }
+            }
         }
     });
 
@@ -121,4 +131,5 @@ module.exports = function (grunt) {
         'jshint',
         'test'
     ]);
+
 };

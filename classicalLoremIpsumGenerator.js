@@ -1,3 +1,5 @@
+"use strict";
+
 function Lorem(text) {
   this.words = [];
 

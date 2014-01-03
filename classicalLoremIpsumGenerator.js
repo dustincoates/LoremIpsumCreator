@@ -29,5 +29,7 @@ Lorem.prototype.removeDuplicates = function(text) {
 };
 
 Lorem.prototype.enoughUniqueWords = function(numOfWords) {
+  return this.words.length >= numOfWords;
+};
 
 };

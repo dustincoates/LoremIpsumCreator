@@ -2,6 +2,7 @@
 
 function Lorem(text) {
   this.words = [];
+  this.MIN_NUM_WORDS = 3;
   var defaultPaddingWords = "lorem ipsum dolor sit amet adipisicing elit";
 
   if(this instanceof Lorem){
@@ -85,8 +86,8 @@ Lorem.removeDuplicates = function(text) {
   return Object.keys(cache);
 };
 
-Lorem.prototype.enoughUniqueWords = function(numOfWords) {
-  return this.words.length >= numOfWords;
+Lorem.prototype.enoughUniqueWords = function() {
+  return this.words.length >= MIN_NUM_WORDS;
 };
 
 Lorem.sentencize = function(words) {

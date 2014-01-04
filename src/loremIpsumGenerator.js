@@ -5,7 +5,8 @@ function lorem(count, text){
   if (isNaN(count)){
     count = parseInt(count, 10);
     if (isNaN(count)){
-    return "You must specify a number.";}
+      return "You must specify a number.";
+    }
   }
 
   function removeDuplicateWords(text){

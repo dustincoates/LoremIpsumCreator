@@ -92,3 +92,5 @@ Lorem.prototype.enoughUniqueWords = function(numOfWords) {
 Lorem.sentencize = function(words) {
   return words.join(" ")+".";
 };
+
+module.exports = Lorem;

@@ -87,7 +87,7 @@ Lorem.removeDuplicates = function(text) {
 };
 
 Lorem.prototype.enoughUniqueWords = function() {
-  return this.words.length >= MIN_NUM_WORDS;
+  return this.words.length >= this.MIN_NUM_WORDS;
 };
 
 Lorem.sentencize = function(words) {

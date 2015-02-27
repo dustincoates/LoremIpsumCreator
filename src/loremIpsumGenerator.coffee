@@ -1,3 +1,4 @@
+# Unfinished, obviously
 lorem(count, text) ->
   tempWell = text.split(" ")
   theWell = []
